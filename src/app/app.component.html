@@ -1,0 +1,138 @@
+<h1>Hello world!</h1>
+<app-check></app-check>
+<app-student-list></app-student-list>
+<app-login></app-login>
+
+<button (click)="getName()">Click Me</button>
+<br/>
+
+<!-- counter application -->
+<h1>Counter</h1>
+
+<button (click)="counter('incre')">+</button>
+<h2>{{num}}</h2>
+<button (click)="counter('decre')">-</button>
+<br/>
+
+<!-- Diff. between property binding and interpolation -->
+
+<input type="text" placeholder="Interpolation" disabled={{disable}}>
+<br/>
+<br/>
+<input type="text" placeholder="Property Binding" [disabled]="disable">
+<br/>
+<button (click)="handledisable()">Change Disable</button>
+
+<!-- if else condition -->
+
+<!-- for the if condition -->
+<h1 *ngIf="show">Hello My value is true</h1>
+
+<!-- for the else condition -->
+
+<h1 *ngIf="show else elseBlock">Hello I am from if condition block & my value is true</h1>
+
+<ng-template #elseBlock>
+  <h1>
+    Hello I am from else condition block & my value is false
+  </h1>
+</ng-template>
+
+<!-- another way to write if else condition -->
+
+<h1 *ngIf="show; then ifBlock else elseBock"></h1>
+
+<ng-template #ifBlock>
+  <h1>
+    Hello I am from second way if condition block & my value is true
+  </h1>
+</ng-template>
+<ng-template #elseBock>
+  <h1>
+    Hello I am from second way else condition block & my value is false
+  </h1>
+</ng-template>
+
+<!-- toggle useing if-else condition -->
+
+<button (click)="toggle()">Toggle</button>
+<span *ngIf="status; then LogoutBlock else SigninBlock"></span>
+<ng-template #SigninBlock>
+  <h1>Sign-in</h1>
+</ng-template>
+<ng-template #LogoutBlock>
+  <h1>Log-out</h1>
+</ng-template>
+
+<!-- Multiple condition -->
+
+<h1>Multiple condition</h1>
+
+<select name="color" #color (change)="Changecolor(color.value)">
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="green">Green</option>
+</select>
+
+
+
+<ng-template [ngIf]="colors==='red'">
+  <h1 style="color:red;">Red</h1>
+</ng-template>
+<ng-template [ngIf]="colors==='blue'">
+  <h1 style="color:blue;">Blue</h1>
+</ng-template>
+<ng-template [ngIf]="colors==='green'">
+  <h1 style="color:green;">Green</h1>
+</ng-template>
+
+
+<!-- Switchcase -->
+
+<h1>Switchcase</h1>
+
+
+<select name="color" #color1 (change)="Changecolor1(color1.value)">
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="green">Green</option>
+  <option value="yellow">Yellow</option>
+  <option value="skyblue">Skyblue</option>
+  <option value="orange">Orange</option>
+</select>
+
+<div [ngSwitch]="colors1">
+  <h1 *ngSwitchCase="'red'" style="color: red;">Red Color</h1>
+  <h1 *ngSwitchCase="'blue'" style="color: blue;">Blue Color</h1>
+  <h1 *ngSwitchCase="'green'" style="color: green;">Green Color</h1>
+  <h1 *ngSwitchCase="'yellow'" style="color: yellow;">Yellow Color</h1>
+  <h1 *ngSwitchCase="'skyblue'" style="color: skyblue;">Skyblue Color</h1>
+  <h1 *ngSwitchCase="'orange'" style="color: orange;">Orange Color</h1>
+  <h1 *ngSwitchDefault style="color: black;">Default Color</h1>
+</div>
+
+<!-- For Loop in angular -->
+
+<h1>Loop in Angular</h1>
+
+<h2 *ngFor="let person of names">Name is : {{person}}</h2>
+
+<!-- for loop on Array object -->
+
+<h3 *ngFor="let item of details">{{item.firstname}}--{{item.email}}--{{item.phone}}</h3>
+
+<!-- nested loop -->
+
+<ul *ngFor="let user of nested">
+  <li>Name : {{user.firstname}}</li>
+  <li>Email : {{user.email}}</li>
+  <li>Hobbies</li>
+  <ul *ngFor="let hob of user.hobbies">
+      <li>{{hob}}</li>
+  </ul>
+</ul>
+
+<!-- style binding  -->
+
+<h1 [style.color]="mycolor">Hello</h1>
+<button (click)="colorToggle()">Chnage Color</button>

@@ -1,0 +1,28 @@
+<p>login works!</p>
+
+
+<!-- Interpolation -->
+<h1>first login {{firstName}}</h1>
+
+
+<!-- function call on button click-->
+<button (click)="getUserName('Dhruv',12)">User Name</button>
+
+
+<!-- events in angular -->
+<input placeholder="Keyup event" #box (keyup)="dataInput(box.value)"/>
+<br/><br/>
+<input placeholder="Keydown event" #box1 (keydown)="dataInput(box1.value)"/>
+<br/><br/>
+<input placeholder="blur event" #box2 (blur)="dataInput(box2.value)"/>
+<br/><br/>
+<h1 (mouseover)="dataInput('mouseover')">Mouse Over</h1>
+<br/><br/>
+<h1 (mouseleave)="dataInput('mouseleave')">Mouse Leave</h1>
+<br/><br/>
+
+<!-- Display value on screen -->
+<input type="text" placeholder="Display value" #inputval (input)="getValue(inputval.value)">
+<button (click)="getValue(inputval.value)">Value of input box</button>
+<br/><br/>
+<h1>{{displayName}}</h1>
