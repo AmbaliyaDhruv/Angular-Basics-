@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import {FormControl,FormGroup, Validators} from "@angular/forms"
 
 @Component({
   selector: 'app-root',
@@ -158,5 +159,48 @@ obj={
 // custom pipe to convert INR to USD refer to inrtoUsd.pipe.ts file 
 
 INR=100
+
+// Reactive form
+// FormGroup control whole form
+// FormControl control individual control Or individual field
+
+loginForm=new FormGroup({
+  email:new FormControl(""),
+  password:new FormControl("")
+})
+
+reactiveData={}
+
+loginUser(){
+  this.reactiveData=this.loginForm.value
+}
+
+// Reactive form Validation
+// first import Validators from @angular/forms
+// create a getter for the form control
+
+loginForm1=new FormGroup({
+  email:new FormControl("",[Validators.required,Validators.email]),
+  password:new FormControl("",[Validators.required,Validators.minLength(6)])
+})
+
+reactiveData1={}
+
+loginUser1(){
+  this.reactiveData1=this.loginForm1.value
+}
+
+get email(){
+  return this.loginForm1.get("email")
+}
+
+get password(){
+  return this.loginForm1.get("password")
+
+}
+
+// custom directive refer reddirect folder
+
+customdirectie="Hello"
 
 }

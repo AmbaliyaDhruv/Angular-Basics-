@@ -245,3 +245,41 @@
 <!-- custom pipes -->
 
 <h3>{{INR | inrtoUsd}}</h3>
+
+<!-- Reactive form in Angular -->
+
+<h1>Reactive form </h1>
+
+<form [formGroup]="loginForm" (ngSubmit)="loginUser()">
+  <input type="email" placeholder="Enter Name" name="email" formControlName="email" >
+  <br><br>
+<input type="password" placeholder="Enter Password" name="password" formControlName="password">
+<br><br>
+<button>Login</button>
+</form>
+
+<h2>{{reactiveData | json}}</h2>
+
+<!-- Reactive form Validation -->
+
+<h1>Reactive form with Validation</h1>
+
+<form [formGroup]="loginForm1" (ngSubmit)="loginUser1()">
+  <input type="email" placeholder="Enter Name" name="email" formControlName="email" >
+  <br>
+  <span style="color: red;" *ngIf="email && email.invalid && email.touched">This Field is InValid</span>
+  <br>
+<input type="password" placeholder="Enter Password" name="password" formControlName="password">
+<br>
+<span style="color: red;" *ngIf="password && password.invalid && password.touched">This Field is InValid</span>
+<br>
+<button [disabled]="loginForm1.invalid">Login</button>
+</form>
+
+<h2>{{reactiveData1 | json}}</h2>
+
+<!-- custom directive -->
+
+<h1>Custom Directive</h1>
+
+<h1 appRedele >{{customdirectie}}</h1>

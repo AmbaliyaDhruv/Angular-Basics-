@@ -7,10 +7,12 @@ import { CheckComponent } from './check/check.component';
 import { StudentListComponent } from './student-list/student-list.component';
 import {UserAuthModule} from "./user-auth/user-auth.module"
 import {FormsModule} from '@angular/forms';
+import {ReactiveFormsModule} from "@angular/forms"
 import { ChildComponent } from './child/child.component';
 import { ReuseChildComponent } from './reuse-child/reuse-child.component';
 import { ChildtoParentComponent } from './childto-parent/childto-parent.component';
 import { InrtoUsdPipe } from './inrto-usd.pipe';
+import { RedeleDirective } from './reddirect/redele.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,13 +21,15 @@ import { InrtoUsdPipe } from './inrto-usd.pipe';
     ChildComponent,
     ReuseChildComponent,
     ChildtoParentComponent,
-    InrtoUsdPipe
+    InrtoUsdPipe,
+    RedeleDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserAuthModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
