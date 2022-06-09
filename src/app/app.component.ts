@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -88,5 +89,74 @@ export class AppComponent {
   colorToggle(){
     this.mycolor==="red"?this.mycolor="blue":this.mycolor="red";
   }
-   
+
+  // Angular basic form
+
+  userData:any={}
+
+  getData(data:NgForm){
+    this.userData=data
+  }
+
+  // Todo
+
+  listItems:any[]=[]
+
+  AddNewTask(task:any){
+    this.listItems.push({id:this.listItems.length+1 , task:task})
+
+}
+removeItem(id:number){
+  this.listItems=this.listItems.filter(item=>item.id!=id)
+}
+
+// send data parent to child component
+
+parentData=10;
+  
+changeValue(){
+  this.parentData=Math.floor(Math.random()*10)
+}
+
+//  reusable child component
+
+chilDataDetails=[
+  {name:"dhruv" , email:"D@D.com"},
+  {name:"raj" , email:"r@r.com"},
+  {name:"rajesh" , email:"rj@rj.com"},
+  {name:"meet" , email:"m@m.com"}
+
+]
+
+
+//  trnasfer data from child to parent
+childtoparent=""
+updateData(data:string){
+
+  this.childtoparent=data
+}
+
+// Two way binding
+
+name:any;
+
+// template reference variable
+
+getValue(data:HTMLInputElement){
+  console.log(data.placeholder)
+}
+
+//  pipes in angular
+
+tital="Angular Pipes"
+today=new Date()
+obj={
+  name:"Dhruv",
+  age:20
+}
+
+// custom pipe to convert INR to USD refer to inrtoUsd.pipe.ts file 
+
+INR=100
+
 }

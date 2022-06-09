@@ -136,3 +136,112 @@
 
 <h1 [style.color]="mycolor">Hello</h1>
 <button (click)="colorToggle()">Chnage Color</button>
+
+
+<!-- Angular basic FormsModule -->
+
+<h1>Form in Angular</h1>
+
+<form #basicform="ngForm" (ngSubmit)="getData(basicform.value)">
+  <input type="text" ngModel name="name" placeholder="Enter Your name">
+  <br/>
+  <br/>
+  <input type="text" ngModel name="email" placeholder="Enter Your Email">
+  <br/>
+  <br/>
+  <input ngModel type="submit">
+</form>
+
+<ul>
+  <li>
+    Name : {{userData.name}}
+  </li>
+  <li>
+    Email : {{userData.email}}
+   </li>
+</ul>
+
+
+<!-- Todo -->
+
+<h1>Basic Todo</h1>
+
+<input type="text" #newTask  placeholder="Enter Your Task">
+<button (click)="AddNewTask(newTask.value)">Add</button>
+
+<br /><br/>
+
+<ul *ngFor="let item of listItems">
+  <li>{{item.task}} <button (click)="removeItem(item.id)">Remove</button></li>
+</ul>
+
+<!-- Send data parent to child component -->
+
+<app-child [num]="parentData"></app-child>
+
+<!-- Button to change value of child prop -->
+
+<h1>change the Child value from the parent</h1>
+
+<button (click)="changeValue()">Change Value</button>
+
+<!-- reusable chile component  -->
+
+<h2>Reusable child component</h2>
+<ul *ngFor="let person of chilDataDetails">
+  <app-reuse-child [data]="person"></app-reuse-child>
+</ul>
+
+<!-- send data child to parent component -->
+
+<h1>Send data from child to parent component</h1>
+
+<h3>{{childtoparent}}</h3>
+
+<app-childto-parent (updateDataEvent)="updateData($event)"></app-childto-parent>
+
+
+<!-- Two way binding -->
+
+<h1>Two way Binding</h1>
+
+<input type="text" [(ngModel)]="name" />
+
+<h1>{{name}}</h1>
+
+<!-- Template Reference Variable (#) -->
+
+<h1>Template Reference Variable</h1>
+
+<input type="text" #temprefbox placeholder="temprefvar">
+
+<button (click)="getValue(temprefbox)">Submit</button>
+
+
+<!-- Pipes -->
+
+<h1>Basic Pipes</h1>
+
+<h3>Without apply pipes</h3>
+<h2>{{tital}}</h2>
+<h2>{{today}}</h2>
+
+<h3>With pipes</h3>
+<h2>{{tital | uppercase}}</h2>
+<h2>{{tital | lowercase}}</h2>
+<h2>{{today | date}}</h2>
+
+<!-- params pipe -->
+<h2>{{tital | slice :3 :6 | uppercase}}</h2>
+
+<!-- json pipe -->
+<h2>{{obj}}</h2>
+<h2>{{obj | json}}</h2>
+
+<!-- currency pipe -->
+
+<h3>{{40 | currency : "GBP"}}</h3>
+
+<!-- custom pipes -->
+
+<h3>{{INR | inrtoUsd}}</h3>
