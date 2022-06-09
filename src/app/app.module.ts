@@ -13,6 +13,9 @@ import { ReuseChildComponent } from './reuse-child/reuse-child.component';
 import { ChildtoParentComponent } from './childto-parent/childto-parent.component';
 import { InrtoUsdPipe } from './inrto-usd.pipe';
 import { RedeleDirective } from './reddirect/redele.directive';
+import { UserComponent } from './user/user.component';
+import { AboutComponent } from './about/about.component';
+import { SinglePersonComponent } from './single-person/single-person.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,10 @@ import { RedeleDirective } from './reddirect/redele.directive';
     ReuseChildComponent,
     ChildtoParentComponent,
     InrtoUsdPipe,
-    RedeleDirective
+    RedeleDirective,
+    UserComponent,
+    AboutComponent,
+    SinglePersonComponent
   ],
   imports: [
     BrowserModule,
