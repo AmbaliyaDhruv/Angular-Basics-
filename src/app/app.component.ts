@@ -2,6 +2,13 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {FormControl,FormGroup, Validators} from "@angular/forms"
 
+interface UserData{
+  name:string,
+  age:number,
+  email:string,
+  password:string
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -202,5 +209,14 @@ get password(){
 // custom directive refer reddirect folder
 
 customdirectie="Hello"
+
+// interface and model 
+ 
+newUser:UserData={
+  name:"Dhruv",
+  age:20,
+  email:"a@a.com",
+  password:"12345"
+}
 
 }
