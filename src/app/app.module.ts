@@ -16,6 +16,10 @@ import { RedeleDirective } from './reddirect/redele.directive';
 import { UserComponent } from './user/user.component';
 import { AboutComponent } from './about/about.component';
 import { SinglePersonComponent } from './single-person/single-person.component';
+import { NoPageComponent } from './no-page/no-page.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { AboutCompanyComponent } from './about-company/about-company.component';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,14 +32,18 @@ import { SinglePersonComponent } from './single-person/single-person.component';
     RedeleDirective,
     UserComponent,
     AboutComponent,
-    SinglePersonComponent
+    SinglePersonComponent,
+    NoPageComponent,
+    AboutMeComponent,
+    AboutCompanyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     UserAuthModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

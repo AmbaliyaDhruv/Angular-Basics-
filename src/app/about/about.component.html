@@ -1,3 +1,16 @@
-<h1>about works!</h1>
+<h1>About works!</h1>
 
 <div style="border:2px solid green; width: 40%; background-color: rgba(107, 255, 107, 0.843); height: 80px;  border-radius: 10px;">About</div>
+
+<h1>Children Routing</h1>
+
+<a routerLink="me">About-me</a>
+<br/><br/>
+<a routerLink="company">About-Company</a>
+<br/><br/>
+
+<ul *ngFor="let userData of data">
+    <li>{{userData.name}} : {{userData.age}}</li>
+</ul>
+
+<router-outlet></router-outlet>

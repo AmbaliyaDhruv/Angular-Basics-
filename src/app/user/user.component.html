@@ -1,2 +1,12 @@
 <h1>user works!</h1>
 <div style="border:2px solid blue; width: 40%; background-color:rgba(66, 66, 231, 0.787); height: 80px;  border-radius: 10px;">User</div>
+
+<ul *ngFor="let userData of data">
+    <li>{{userData.name}} : {{userData.age}}</li>
+</ul>
+
+<h1>App call</h1>
+
+<ul>
+    <li *ngFor="let user of serverData">{{user.name}}----{{user.email}}</li>
+</ul>

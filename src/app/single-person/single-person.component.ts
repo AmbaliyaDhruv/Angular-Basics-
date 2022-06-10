@@ -9,11 +9,11 @@ import { ActivatedRoute } from '@angular/router';
 export class SinglePersonComponent implements OnInit {
 
   constructor(private route : ActivatedRoute) { 
-    console.log(this.route.snapshot.paramMap.get('name'));
+  
   }
 
   ngOnInit(): void {
-    
+    console.log(this.route.snapshot.paramMap.get('name'));
   }
 
 }
