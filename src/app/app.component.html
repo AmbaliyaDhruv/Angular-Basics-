@@ -143,10 +143,10 @@
 <h1>Form in Angular</h1>
 
 <form #basicform="ngForm" (ngSubmit)="getData(basicform.value)">
-  <input type="text" ngModel name="name" placeholder="Enter Your name">
+  <input type="text"  name="name" placeholder="Enter Your name" ngModel>
   <br/>
   <br/>
-  <input type="text" ngModel name="email" placeholder="Enter Your Email">
+  <input type="text"  name="email" placeholder="Enter Your Email" ngModel>
   <br/>
   <br/>
   <input ngModel type="submit">
@@ -253,7 +253,7 @@
 <form [formGroup]="loginForm" (ngSubmit)="loginUser()">
   <input type="email" placeholder="Enter Name" name="email" formControlName="email" >
   <br><br>
-<input type="password" placeholder="Enter Password" name="password" formControlName="password">
+<input type="password" placeholder="Enter Password" name="password" formControlName="password" >
 <br><br>
 <button>Login</button>
 </form>

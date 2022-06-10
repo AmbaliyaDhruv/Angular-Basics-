@@ -19,6 +19,13 @@ export class UserComponent implements OnInit {
     })
   }
 
+  Addproduct(data:any){
+     
+     this.appCall.postData(data).subscribe(data=>{
+        console.log(data)
+     })
+  }
+
   ngOnInit(): void {
   }
 

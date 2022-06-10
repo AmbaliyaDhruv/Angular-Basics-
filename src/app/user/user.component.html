@@ -10,3 +10,18 @@
 <ul>
     <li *ngFor="let user of serverData">{{user.name}}----{{user.email}}</li>
 </ul>
+
+<!-- Post the Data -->
+<form #producrForm="ngForm" (ngSubmit)="Addproduct(producrForm.value)" >
+    <input type="text" placeholder="tital" name="tital"  ngModel>
+    <br/><br/>
+    <input type="text" placeholder="price" name="price" ngModel>
+    <br/><br/>
+    <input type="text" placeholder="description" name="description" ngModel>
+    <br/><br/>
+    <input type="text" placeholder="image" name="image" ngModel>
+    <br/><br/>
+    <input type="text" placeholder="category" name="category" ngModel>
+    <br/><br/>
+    <button>Add Product</button>
+</form>

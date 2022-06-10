@@ -10,4 +10,8 @@ export class AppCallService {
   getData(){
     return this.http.get('https://jsonplaceholder.typicode.com/users');
   }
+
+  postData(data:any){
+    return this.http.post("https://fakestoreapi.com/carts",data);
+  }
 }
