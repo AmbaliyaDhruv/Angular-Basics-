@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ViewContainerRef,ComponentFactoryResolver } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {FormControl,FormGroup, Validators} from "@angular/forms"
 
@@ -217,6 +217,16 @@ newUser:UserData={
   age:20,
   email:"a@a.com",
   password:"12345"
+}
+
+// lazy component 
+constructor(private vcr:ViewContainerRef,private cfr:ComponentFactoryResolver){}
+
+async lazyLoad(){
+  this.vcr.clear()
+  const {LazyCompoComponent} = await import ('./lazy-compo/lazy-compo.component')
+  this.vcr.createComponent(this.cfr.resolveComponentFactory(LazyCompoComponent))
+  
 }
 
 }

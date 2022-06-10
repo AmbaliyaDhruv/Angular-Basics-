@@ -13,7 +13,7 @@ export class SinglePersonComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.route.snapshot.paramMap.get('name'));
+    console.log(this.route);
   }
 
 }

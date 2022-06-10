@@ -20,6 +20,8 @@ import { NoPageComponent } from './no-page/no-page.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { AboutCompanyComponent } from './about-company/about-company.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LazyCompoComponent } from './lazy-compo/lazy-compo.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     SinglePersonComponent,
     NoPageComponent,
     AboutMeComponent,
-    AboutCompanyComponent
+    AboutCompanyComponent,
+    LazyCompoComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     UserAuthModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

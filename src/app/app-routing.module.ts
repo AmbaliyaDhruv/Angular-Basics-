@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutCompanyComponent } from './about-company/about-company.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { AboutComponent } from './about/about.component';
+
 import { NoPageComponent } from './no-page/no-page.component';
 import { SinglePersonComponent } from './single-person/single-person.component';
 import { UserComponent } from './user/user.component';
@@ -24,11 +25,13 @@ const routes: Routes = [{
   component:SinglePersonComponent
 },
 {
+  path:"admin",
+  loadChildren:()=>import("./admin/admin.module").then(m=>m.AdminModule)
+},
+{
   path:"**",
   component:NoPageComponent
-}
-
-
+},
 
 ];
 
