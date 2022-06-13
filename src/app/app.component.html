@@ -334,3 +334,29 @@
 <h1>Lazy loadind component</h1>
 
 <button (click)="lazyLoad()">lazy loading component</button>
+
+
+<!-- this counter import from library -->
+
+<h1>Import Library</h1>
+
+<da-public-lib></da-public-lib>
+
+<!-- Subject in Angular refer service api call folder  -->
+
+<h1>Subject</h1>
+
+<app-comp1></app-comp1>
+<app-comp2></app-comp2>
+<app-comp3></app-comp3>
+
+<!-- Angular lifeCycle hook refer  life-cycle folder -->
+
+<h1>Angular lifeCycle hooks</h1>
+
+<app-life-cycle *ngIf="destorVale" [propLife]="LifeProps">Hello Dhruv</app-life-cycle>
+
+<input type="text" placeholder="Lifecycle" #lifeInput>
+<button (click)="LifeChnage(lifeInput.value)">Submit</button>
+
+<button (click)="DestoryDomele()">Destory</button>

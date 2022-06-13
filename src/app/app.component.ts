@@ -229,4 +229,18 @@ async lazyLoad(){
   
 }
 
+// Subjects 
+
+// Life cycle hooks
+LifeProps="Life cycle hooks"
+LifeChnage(val:any){
+ this.LifeProps=val
+}
+
+destorVale:boolean=true
+
+DestoryDomele(){
+ this.destorVale=!this.destorVale
+}
+
 }

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import { BehaviorSubject, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -14,4 +15,13 @@ export class AppCallService {
   postData(data:any){
     return this.http.post("https://fakestoreapi.com/carts",data);
   }
+
+  // normal subject 
+  // UserName=new Subject<any>();
+
+  // BehaviorSubject
+  UserName=new BehaviorSubject<any>("Dhruvvv")
+
+
+
 }

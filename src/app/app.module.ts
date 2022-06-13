@@ -21,7 +21,11 @@ import { AboutMeComponent } from './about-me/about-me.component';
 import { AboutCompanyComponent } from './about-company/about-company.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LazyCompoComponent } from './lazy-compo/lazy-compo.component';
-
+import {PublicLibModule} from '@dhruvambaliya1112/counter';
+import { Comp1Component } from './comp1/comp1.component';
+import { Comp2Component } from './comp2/comp2.component';
+import { Comp3Component } from './comp3/comp3.component';
+import { LifeCycleComponent } from './life-cycle/life-cycle.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +42,11 @@ import { LazyCompoComponent } from './lazy-compo/lazy-compo.component';
     NoPageComponent,
     AboutMeComponent,
     AboutCompanyComponent,
-    LazyCompoComponent
+    LazyCompoComponent,
+    Comp1Component,
+    Comp2Component,
+    Comp3Component,
+    LifeCycleComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +55,7 @@ import { LazyCompoComponent } from './lazy-compo/lazy-compo.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    PublicLibModule
 
   ],
   providers: [],
